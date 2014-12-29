@@ -6,20 +6,59 @@ about: 'about.html'
 ---
 
 <header class="main-header {% if page.cover %}" style="background-image: url({{ page.cover }}) {%else%}no-cover{% endif %}">
-    <nav class="main-nav overlay clearfix">
+    <nav class="main-nav overlay clearfix st-single-color st-shape-circle">
             {% if page.logo %}
                 <a class="blog-logo" href="{{ site.baseurl }}">
                     <img src="{{ page.logo }}" alt="Blog Logo" />
                 </a>
             {% endif %}
-        <a class="subscribe-button icon-feed" href="{{ site.baseurl }}rss.xml">Subscribe</a>
+
+            {% if page.about %}
+            <nav style="float: left; padding: 8px;">
+                <a href="{{page.about}}">
+                    <img class="author-thumb" src="/assets/images/profile.png" style="width: 39px; height: 39px;" />
+                    <span class="hidden">About Me</span>
+                </a>
+            </nav> 
+            {% endif %}
+
+            <nav style="float: right; padding: 5px;">
+                {% if site.author.github %}
+                    <a title="GitHub" class="st-icon-github-alt" href="https://github.com/{{site.author.github}}">Github</a>
+                {% endif %}
+
+                {% if site.author.plus %}
+                    <a title="Google+" class="st-icon-googleplus" href="https://plus.google.com/u/0/{{site.author.plus}}">Google+</a>
+                {% endif %}
+
+                {% if site.author.android %}
+                    <a title="Android" class="st-icon-android" href="https://play.google.com/store/apps/developer?id={{site.author.android}}">Android</a>
+                {% endif %}
+
+                {% if site.author.linkedin %}
+                    <a title="LinkedIn" class="st-icon-linkedin" href="https://www.linkedin.com/profile/view?id={{site.author.linkedin}}">Linked In</a>
+                {% endif %}
+
+                {% if site.author.gmail %}
+                    <a title="Gmail" class="st-icon-gmail" href="mailto:{{site.author.gmail}}">Gmail</a>
+                {% endif %}
+
+                {% if site.author.overflow %}
+                    <a title="Stack Overflow" class="st-icon-stackoverflow" href="http://stackoverflow.com/users/{{site.author.overflow}}">Stack Overflow</a>
+                {% endif %}
+
+                {% if site.author.twitter %}
+                    <a title="Twitter" class="st-icon-twitter" href="https://twitter.com/{{site.author.twitter}}">Twitter</a>
+                {% endif %}
+            </nav>
     </nav>
     <div class="vertical">
         <div class="main-header-content inner">
             <h1 class="page-title">{{ site.name }}</h1>
             <h2 class="page-description">
-                {% if site.description %} {{ site.description }}. {% endif %}
-                {% if page.about %} <a href='{{ site.baseurl }}{{ page.about }}'> About me </a> {% endif %}
+                {% if site.description %}
+                    {{ site.description }}
+                {% endif %}
             </h2>
         </div>
     </div>
@@ -29,7 +68,6 @@ about: 'about.html'
 
 <main id="content" class="content" role="main">
 
-
     <div class="extra-pagination inner">
         {% include pagination.html %}
     </div>
@@ -38,15 +76,18 @@ about: 'about.html'
 
     <article class="post">
         <header class="post-header">
-            <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+            <h2 class="post-title" style="display: inline-block;"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+            <span style="font-size: 15px; font-style: italic; float: right;">
+                <a style="text-decoration: none;" href="{{ post.url }}#disqus_thread"></a>
+            </span>
         </header>
         <section class="post-excerpt">
             {{ post.excerpt }} <a class="read-more" href="{{ post.url }}">&raquo;</a>
         </section>
         <footer class="post-meta">
-            {% if site.author %}
+            {% if site.author.name %}
                 <img class="author-thumb" src="/assets/images/profile.png" alt="Author's profile picture" nopin="nopin" />
-                {{ site.author }}
+                {{ site.author.name }}
             {% endif %}
             {% if post.categories.size > 0 %} 
                 {{ post.categories | array_to_sentence_string | prepend: 'on ' }} 
@@ -57,25 +98,19 @@ about: 'about.html'
         </footer>
     </article>
 
-    <!-- Capser below -->
-<!--     <article class="{{post_class}}">
-    <header class="post-header">
-        <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>{{excerpt words="26"}} <a class="read-more" href="{{url}}">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        {{#if author.image}}<img class="author-thumb" src="{{author.image}}" alt="Author image" nopin="nopin" />{{/if}}
-        {{author}}
-        {{tags prefix=" on "}}
-        <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
-    </footer>
-    </article> -->
-    <!--  -->
-
     {% endfor %}
 
     {% include pagination.html %}
+
+    <script type="text/javascript">
+    var disqus_shortname = 'binaryrambles'; 
+
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>
 
 </main>

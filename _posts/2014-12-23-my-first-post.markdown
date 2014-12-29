@@ -7,7 +7,7 @@ categories: General
 
 Hoping to start blogging about my vairous electronic and software projects, mostly as a self reference to document my progress, and my views on various aspects of the tech industry. 
 
-Florida born and raised; I've spent the last four years studying Computer Engineering at UCF and will be heading out to California in less than a year to work for [Google]: https://www.google.com. If you're interested, you can find out more [here]: about.html
+Florida born and raised; I've spent the last four years studying Computer Engineering at UCF and will be heading out to California in less than a year to work for [Google](https://www.google.com). If you're interested, you can find out more [here](about.html).
 
 Hope to write more soon! 
 
@@ -15,5 +15,4 @@ Hope to write more soon!
 public static void main(String[] args) {
 	System.out.println("Hello World!");
 }
-#=> prints 'Hello World!' to STDOUT.
 {% endhighlight %}

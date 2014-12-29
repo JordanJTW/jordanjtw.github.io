@@ -38,7 +38,7 @@ html {
    -webkit-text-size-adjust: 100%;
 }
 body { margin: 0; }
-a { background: transparent; }
+a { background-color: transparent; }
 a:focus { outline: thin dotted; }
 a:active, a:hover { outline: 0; }
 h1 { font-size: 2em; margin: 0.67em 0; }
@@ -636,10 +636,6 @@ margin on the iframe, cause it breaks stuff. */
     background: none;
 }
 
-.main-nav.overlay a {
-    color: #fff;
-}
-
 .main-nav.overlay .back-button,
 .main-nav.overlay .subscribe-button {
     border-color: rgba(255,255,255,0.6);
@@ -647,8 +643,6 @@ margin on the iframe, cause it breaks stuff. */
 
 .main-nav.overlay a:hover {
     color: #222;
-    border-color: #fff;
-    background: #fff;
     transition: all 0.1s ease;
 }
 
