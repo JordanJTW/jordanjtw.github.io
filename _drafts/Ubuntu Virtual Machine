@@ -1,0 +1,29 @@
+Ubuntu Virtual Machine
+
+Followed instructions here for build env: https://github.com/esp8266/esp8266-wiki/wiki/Toolchain
+
+Makefile mod to: ESPTOOL = /opt/Espressif/esptool-py/esptool.py
+
+ESP
+TX		GND
+CH_PD	GPIO2				ANTENA
+RST		GPIO0
+VCC		RX				
+
+Flash:
+ESP			TTL
+VCC			VCC (3.3V)
+GND			GND
+TX			RX
+RX			TX
+RST			VCC	(3.3V)
+CH_PD		RTS
+GPIO0		DTR
+
+Run:
+GPIO0		DISCONNECTED
+CH_PD		VCC (3.3V)
+
+
+
+
