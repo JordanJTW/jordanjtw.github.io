@@ -8,7 +8,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _pkg_rust8__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pkg/rust8 */ \"./pkg/rust8.js\");\n\n\n_pkg_rust8__WEBPACK_IMPORTED_MODULE_0__[\"greet\"](\"Jake\");\n\n\n//# sourceURL=webpack:///./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _pkg_rust8__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pkg/rust8 */ \"./pkg/rust8.js\");\n\n\n_pkg_rust8__WEBPACK_IMPORTED_MODULE_0__[\"greet\"](\"Jordan\");\n\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ }),
 
